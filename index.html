@@ -2,332 +2,209 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NEON | Digital World</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEON | دنیای دیجیتال</title>
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --cyan: #00f7ff;
-    --purple: #a855f7;
-    --bg: #060816;
-}
-
-body {
-    font-family: Tahoma, sans-serif;
-    background: var(--bg);
-    color: white;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background:
-      radial-gradient(circle at 20% 20%,
-      #11265a 0, transparent 35%),
-      radial-gradient(circle at 80% 70%,
-      #35104c 0, transparent 35%);
-}
-
-nav {
-    width: 90%;
-    max-width: 1100px;
-    margin: 25px auto;
-    padding: 18px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #ffffff20;
-    background: #ffffff08;
-    backdrop-filter: blur(15px);
-    border-radius: 18px;
-}
-
-.logo {
-    font-size: 25px;
-    font-weight: bold;
-    color: var(--cyan);
-    text-shadow: 0 0 15px var(--cyan);
-}
-
-nav a {
-    color: #ddd;
-    text-decoration: none;
-    margin-right: 18px;
-    transition: .3s;
-}
-
-nav a:hover {
-    color: var(--cyan);
-}
-
-.hero {
-    max-width: 1000px;
-    margin: auto;
-    padding: 90px 20px 60px;
-    text-align: center;
-    animation: appear 1.2s ease;
-}
-
-.badge {
-    display: inline-block;
-    padding: 10px 18px;
-    border: 1px solid #00f7ff60;
-    border-radius: 50px;
-    color: var(--cyan);
-    background: #00f7ff10;
-    margin-bottom: 25px;
-}
-
-h1 {
-    font-size: clamp(35px, 7vw, 70px);
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-h1 span {
-    color: var(--cyan);
-    text-shadow: 0 0 30px #00f7ff70;
-}
-
-.description {
-    color: #aab2d5;
-    line-height: 2.2;
-    max-width: 600px;
-    margin: 0 auto 30px;
-}
-
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-block;
-    padding: 15px 25px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: .3s;
-}
-
-.primary {
-    background: var(--cyan);
-    color: #050816;
-    box-shadow: 0 0 25px #00f7ff30;
-}
-
-.secondary {
-    color: white;
-    border: 1px solid #ffffff40;
-}
-
-.btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px #00f7ff50;
-}
-
-.section-title {
-    text-align: center;
-    margin: 35px 0;
-    font-size: 28px;
-}
-
-.section-title span {
-    color: var(--cyan);
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    max-width: 1050px;
-    padding: 20px;
-    margin: auto;
-}
-
-.card {
-    padding: 30px 24px;
-    background: #ffffff08;
-    border: 1px solid #ffffff15;
-    border-radius: 20px;
-    transition: .35s;
-    animation: appear .8s ease both;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    border-color: var(--cyan);
-    box-shadow: 0 0 30px #00f7ff15;
-}
-
-.icon {
-    font-size: 35px;
-    margin-bottom: 20px;
-}
-
-.card h3 {
-    margin-bottom: 15px;
-    color: var(--cyan);
-}
-
-.card p {
-    color: #aab2d5;
-    line-height: 2;
-    font-size: 14px;
-}
-
-.status {
-    text-align: center;
-    color: #aab2d5;
-    margin: 60px 0 25px;
-}
-
-.dot {
-    display: inline-block;
-    width: 9px;
-    height: 9px;
-    background: #36ff9f;
-    border-radius: 50%;
-    margin-left: 8px;
-    box-shadow: 0 0 12px #36ff9f;
-}
-
-footer {
-    text-align: center;
-    padding: 25px;
-    color: #777f9f;
-    border-top: 1px solid #ffffff12;
-}
-
-@keyframes appear {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 600px) {
-    nav {
-        width: 94%;
-        padding: 15px;
-    }
-
-    nav a {
-        margin-right: 8px;
-        font-size: 12px;
-    }
-
-    .hero {
-        padding-top: 60px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-    }
-}
+:root{--bg:#080b16;--panel:#11172a;--text:#eef5ff;--cyan:#00f0ff;--purple:#a855f7;--muted:#a7b4ce}
+body.light{--bg:#f2f5ff;--panel:#fff;--text:#18213a;--cyan:#007d99;--purple:#7736c9;--muted:#56627c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:1.8;transition:.2s}
+header{padding:15px 5%;background:var(--panel);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid #35405b}
+.logo{font-size:25px;font-weight:bold;color:var(--cyan)}
+nav{display:flex;gap:13px;flex-wrap:wrap}
+a{color:var(--text);text-decoration:none}
+a:hover{color:var(--cyan)}
+button{background:linear-gradient(120deg,var(--cyan),var(--purple));color:white;border:0;padding:10px 15px;border-radius:9px;cursor:pointer;font-weight:bold}
+.container{width:min(1000px,92%);margin:auto}
+.hero{text-align:center;padding:60px 10px 35px}
+.hero h1{font-size:clamp(30px,6vw,52px);margin:0}
+.glow{color:var(--cyan);text-shadow:0 0 20px #00eaff44}
+.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:var(--panel);padding:20px;border:1px solid #35405b;border-radius:16px;min-width:0}
+.card h3{color:var(--cyan);margin-top:0}
+input,select,textarea{width:100%;padding:12px;margin:7px 0 12px;border-radius:9px;border:1px solid #35405b;background:var(--bg);color:var(--text);font:inherit}
+.result{padding:10px;margin-top:10px;border:1px solid #35405b;border-radius:9px;overflow-wrap:anywhere}
+section{margin-bottom:38px}
+.section-title{text-align:center;margin:35px 0 20px}
+.hidden{display:none!important}
+footer{text-align:center;padding:25px;color:var(--muted)}
+@media(max-width:600px){header{justify-content:center}nav{justify-content:center}.hero{padding-top:35px}}
 </style>
 </head>
-
 <body>
+<header>
+  <div class="logo">NEON<span class="glow">.</span></div>
+  <nav>
+    <a href="#home">خانه</a>
+    <a href="#tools">ابزارها</a>
+    <a href="#contact">تماس</a>
+    <a href="#account">حساب کاربری</a>
+  </nav>
+  <button id="theme">🌗 تغییر تم</button>
+</header>
 
-<nav>
-    <div class="logo">NEON.</div>
-    <div>
-        <a href="#home">خانه</a>
-        <a href="#services">امکانات</a>
-    </div>
-</nav>
-
+<main class="container">
 <section class="hero" id="home">
-    <div class="badge">⚡ نسل جدید دنیای دیجیتال</div>
-
-    <h1>
-        وارد دنیای<br>
-        <span>بی‌نهایت شو!</span>
-    </h1>
-
-    <p class="description">
-        یک تجربه متفاوت از طراحی مدرن،
-        فناوری و خلاقیت؛
-        جایی که ایده‌ها به واقعیت تبدیل می‌شوند.
-    </p>
-
-    <div class="buttons">
-        <a href="#services" class="btn primary">
-            شروع کن 🚀
-        </a>
-
-        <a href="#about" class="btn secondary">
-            بیشتر بدان
-        </a>
-    </div>
+  <p class="muted">● دنیای دیجیتال در دستان تو</p>
+  <h1>به دنیای <span class="glow">NEON</span> خوش آمدی</h1>
+  <p class="muted">ابزارهای کاربردی با طراحی نئونی و پشتیبانی از گوشی و کامپیوتر.</p>
+  <a href="#tools"><button>شروع کن ←</button></a>
 </section>
 
-<h2 class="section-title" id="services">
-    امکانات <span>سایت</span>
-</h2>
+<section id="tools">
+  <div class="section-title">
+    <h2>🧰 ابزارهای کاربردی</h2>
+    <p class="muted">نام ابزار مورد نظرت را جست‌وجو کن.</p>
+  </div>
+  <input id="search" placeholder="🔎 جست‌وجوی ابزارها...">
+  <div class="grid" id="grid">
+    <article class="card tool" data-name="ماشین حساب محاسبات ریاضی">
+      <h3>🧮 ماشین‌حساب</h3>
+      <input id="a" type="number" placeholder="عدد اول">
+      <select id="op">
+        <option value="+">جمع +</option><option value="-">تفریق −</option>
+        <option value="*">ضرب ×</option><option value="/">تقسیم ÷</option>
+      </select>
+      <input id="b" type="number" placeholder="عدد دوم">
+      <button id="calc">محاسبه</button>
+      <div id="calcResult" class="result">نتیجه اینجا نمایش داده می‌شود.</div>
+    </article>
 
-<section class="cards">
+    <article class="card tool" data-name="تبدیل واحد متر کیلومتر سانتی متر">
+      <h3>📏 تبدیل واحد طول</h3>
+      <input id="unitValue" type="number" placeholder="عدد">
+      <select id="from">
+        <option value="m">متر</option><option value="km">کیلومتر</option><option value="cm">سانتی‌متر</option>
+      </select>
+      <select id="to">
+        <option value="km">کیلومتر</option><option value="m">متر</option><option value="cm">سانتی‌متر</option>
+      </select>
+      <button id="convert">تبدیل</button>
+      <div id="unitResult" class="result">نتیجه اینجا نمایش داده می‌شود.</div>
+    </article>
 
-    <div class="card">
-        <div class="icon">🌌</div>
-        <h3>طراحی نئونی</h3>
-        <p>
-            رابط کاربری مدرن با رنگ‌های درخشان
-            و جلوه‌های بصری جذاب.
-        </p>
-    </div>
-
-    <div class="card">
-        <div class="icon">⚡</div>
-        <h3>سرعت بالا</h3>
-        <p>
-            ساختاری سبک برای بارگذاری سریع
-            و تجربه کاربری روان.
-        </p>
-    </div>
-
-    <div class="card">
-        <div class="icon">📱</div>
-        <h3>سازگار با موبایل</h3>
-        <p>
-            نمایش مناسب در گوشی، تبلت
-            و صفحه‌نمایش کامپیوتر.
-        </p>
-    </div>
-
+    <article class="card tool" data-name="ساعت دیجیتال تاریخ زمان">
+      <h3>🕒 ساعت دیجیتال</h3>
+      <div id="clock" class="result" style="font-size:23px;text-align:center"></div>
+      <p class="muted">بر اساس ساعت دستگاه شما.</p>
+    </article>
+  </div>
+  <p id="noResults" class="muted hidden">ابزاری پیدا نشد.</p>
 </section>
 
-<div class="status" id="about">
-    <span class="dot"></span>
-    آماده برای ایده‌های جدید
-</div>
+<section id="contact">
+  <div class="section-title"><h2>📩 تماس با ما</h2></div>
+  <div class="card">
+    <form id="contactForm">
+      <label>نام</label><input id="name" required maxlength="80" placeholder="نام شما">
+      <label>ایمیل</label><input type="email" required placeholder="ایمیل شما">
+      <label>پیام</label><textarea required maxlength="1000" rows="4" placeholder="پیامت را بنویس"></textarea>
+      <button>بررسی فرم</button>
+      <div id="contactResult" class="result"></div>
+    </form>
+    <p class="muted">این فرم نمایشی است و پیام واقعی ارسال نمی‌کند.</p>
+  </div>
+</section>
 
-<footer>
-    ساخته‌شده با ❤️ و فناوری وب
-    <br><br>
-    © 2026 NEON
-</footer>
+<section id="account">
+  <div class="section-title"><h2>🔐 حساب کاربری</h2><p class="muted">ورود و ثبت‌نام نمایشی</p></div>
+  <div class="grid">
+    <div class="card">
+      <h3>ورود</h3>
+      <form id="login">
+        <input type="email" required placeholder="ایمیل">
+        <input type="password" minlength="6" required placeholder="رمز عبور">
+        <button>بررسی ورود</button>
+      </form>
+      <div id="loginResult" class="result"></div>
+    </div>
+    <div class="card">
+      <h3>ثبت‌نام</h3>
+      <form id="register">
+        <input required maxlength="80" placeholder="نام">
+        <input type="email" required placeholder="ایمیل">
+        <input type="password" minlength="6" required placeholder="رمز عبور">
+        <button>بررسی ثبت‌نام</button>
+      </form>
+      <div id="registerResult" class="result"></div>
+    </div>
+  </div>
+  <p class="muted">ورود و ثبت‌نام واقعی به سرور امن نیاز دارند. این صفحه هیچ رمز عبوری را ذخیره نمی‌کند.</p>
+</section>
+</main>
 
+<footer>© <span id="year"></span> NEON | طراحی برای دنیای دیجیتال</footer>
+
+<script>
+"use strict";
+
+const themeButton=document.getElementById("theme");
+themeButton.addEventListener("click",()=>{
+  document.body.classList.toggle("light");
+});
+
+document.getElementById("calc").addEventListener("click",()=>{
+  const first=document.getElementById("a").value;
+  const second=document.getElementById("b").value;
+  const result=document.getElementById("calcResult");
+  if(first===""||second===""){result.textContent="هر دو عدد را وارد کن.";return;}
+  const x=Number(first),y=Number(second);
+  const op=document.getElementById("op").value;
+  if(op==="/"&&y===0){result.textContent="تقسیم بر صفر مجاز نیست.";return;}
+  const answer=op==="+"?x+y:op==="-"?x-y:op==="*"?x*y:x/y;
+  result.textContent="نتیجه: "+answer;
+});
+
+document.getElementById("convert").addEventListener("click",()=>{
+  const raw=document.getElementById("unitValue").value;
+  const result=document.getElementById("unitResult");
+  if(raw===""){result.textContent="یک عدد وارد کن.";return;}
+  const factors={m:1,km:1000,cm:0.01};
+  const from=document.getElementById("from").value;
+  const to=document.getElementById("to").value;
+  const answer=Number(raw)*factors[from]/factors[to];
+  const names={m:"متر",km:"کیلومتر",cm:"سانتی‌متر"};
+  result.textContent="نتیجه: "+answer+" "+names[to];
+});
+
+function updateClock(){
+  const now=new Date();
+  document.getElementById("clock").textContent=
+    now.toLocaleTimeString("fa-IR")+" | "+now.toLocaleDateString("fa-IR");
+}
+updateClock();
+setInterval(updateClock,1000);
+document.getElementById("year").textContent=new Date().getFullYear();
+
+document.getElementById("search").addEventListener("input",event=>{
+  const query=event.target.value.trim().toLocaleLowerCase("fa");
+  let count=0;
+  document.querySelectorAll(".tool").forEach(card=>{
+    const match=(card.dataset.name+" "+card.innerText).toLocaleLowerCase("fa").includes(query);
+    card.classList.toggle("hidden",!match);
+    if(match)count++;
+  });
+  document.getElementById("noResults").classList.toggle("hidden",count>0);
+});
+
+document.getElementById("contactForm").addEventListener("submit",event=>{
+  event.preventDefault();
+  document.getElementById("contactResult").textContent=
+    "فرم بررسی شد؛ برای ارسال واقعی باید سرویس ارسال پیام تنظیم شود.";
+});
+
+document.getElementById("login").addEventListener("submit",event=>{
+  event.preventDefault();
+  document.getElementById("loginResult").textContent=
+    "فرم معتبر است، اما ورود واقعی هنوز فعال نیست.";
+});
+
+document.getElementById("register").addEventListener("submit",event=>{
+  event.preventDefault();
+  document.getElementById("registerResult").textContent=
+    "فرم معتبر است، اما ثبت‌نام واقعی هنوز فعال نیست.";
+});
+</script>
 </body>
 </html>
