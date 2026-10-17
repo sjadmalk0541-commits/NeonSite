@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NEON | Digital World</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cyan: #00f7ff;
+    --purple: #a855f7;
+    --bg: #060816;
+}
+
+body {
+    font-family: Tahoma, sans-serif;
+    background: var(--bg);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(circle at 20% 20%,
+      #11265a 0, transparent 35%),
+      radial-gradient(circle at 80% 70%,
+      #35104c 0, transparent 35%);
+}
+
+nav {
+    width: 90%;
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ffffff20;
+    background: #ffffff08;
+    backdrop-filter: blur(15px);
+    border-radius: 18px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--cyan);
+    text-shadow: 0 0 15px var(--cyan);
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    margin-right: 18px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--cyan);
+}
+
+.hero {
+    max-width: 1000px;
+    margin: auto;
+    padding: 90px 20px 60px;
+    text-align: center;
+    animation: appear 1.2s ease;
+}
+
+.badge {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid #00f7ff60;
+    border-radius: 50px;
+    color: var(--cyan);
+    background: #00f7ff10;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(35px, 7vw, 70px);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: var(--cyan);
+    text-shadow: 0 0 30px #00f7ff70;
+}
+
+.description {
+    color: #aab2d5;
+    line-height: 2.2;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.primary {
+    background: var(--cyan);
+    color: #050816;
+    box-shadow: 0 0 25px #00f7ff30;
+}
+
+.secondary {
+    color: white;
+    border: 1px solid #ffffff40;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px #00f7ff50;
+}
+
+.section-title {
+    text-align: center;
+    margin: 35px 0;
+    font-size: 28px;
+}
+
+.section-title span {
+    color: var(--cyan);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1050px;
+    padding: 20px;
+    margin: auto;
+}
+
+.card {
+    padding: 30px 24px;
+    background: #ffffff08;
+    border: 1px solid #ffffff15;
+    border-radius: 20px;
+    transition: .35s;
+    animation: appear .8s ease both;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--cyan);
+    box-shadow: 0 0 30px #00f7ff15;
+}
+
+.icon {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: var(--cyan);
+}
+
+.card p {
+    color: #aab2d5;
+    line-height: 2;
+    font-size: 14px;
+}
+
+.status {
+    text-align: center;
+    color: #aab2d5;
+    margin: 60px 0 25px;
+}
+
+.dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background: #36ff9f;
+    border-radius: 50%;
+    margin-left: 8px;
+    box-shadow: 0 0 12px #36ff9f;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #777f9f;
+    border-top: 1px solid #ffffff12;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        width: 94%;
+        padding: 15px;
+    }
+
+    nav a {
+        margin-right: 8px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding-top: 60px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">NEON.</div>
+    <div>
+        <a href="#home">خانه</a>
+        <a href="#services">امکانات</a>
+    </div>
+</nav>
+
+<section class="hero" id="home">
+    <div class="badge">⚡ نسل جدید دنیای دیجیتال</div>
+
+    <h1>
+        وارد دنیای<br>
+        <span>بی‌نهایت شو!</span>
+    </h1>
+
+    <p class="description">
+        یک تجربه متفاوت از طراحی مدرن،
+        فناوری و خلاقیت؛
+        جایی که ایده‌ها به واقعیت تبدیل می‌شوند.
+    </p>
+
+    <div class="buttons">
+        <a href="#services" class="btn primary">
+            شروع کن 🚀
+        </a>
+
+        <a href="#about" class="btn secondary">
+            بیشتر بدان
+        </a>
+    </div>
+</section>
+
+<h2 class="section-title" id="services">
+    امکانات <span>سایت</span>
+</h2>
+
+<section class="cards">
+
+    <div class="card">
+        <div class="icon">🌌</div>
+        <h3>طراحی نئونی</h3>
+        <p>
+            رابط کاربری مدرن با رنگ‌های درخشان
+            و جلوه‌های بصری جذاب.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="icon">⚡</div>
+        <h3>سرعت بالا</h3>
+        <p>
+            ساختاری سبک برای بارگذاری سریع
+            و تجربه کاربری روان.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="icon">📱</div>
+        <h3>سازگار با موبایل</h3>
+        <p>
+            نمایش مناسب در گوشی، تبلت
+            و صفحه‌نمایش کامپیوتر.
+        </p>
+    </div>
+
+</section>
+
+<div class="status" id="about">
+    <span class="dot"></span>
+    آماده برای ایده‌های جدید
+</div>
+
+<footer>
+    ساخته‌شده با ❤️ و فناوری وب
+    <br><br>
+    © 2026 NEON
+</footer>
+
+</body>
+</html>
